@@ -30,6 +30,20 @@ def tri_fusion(L):
     L2 = L[len(L)//2:]
     return fusion(tri_fusion(L1),tri_fusion(L2))
 
+def tri_a_bulles(L):
+    n=len(L)
+    changement = True
+    while changement == True:
+        changement = False
+        for i in range(n-1):
+            if L[i]>= L[i+1]:
+                L[i], L[i+1]=L[i+1], L[i]
+                changement = True
+    return(L)
 
-L=[3,5,1,6,7,8,4,2]
+L=[1,7,4,5,8,2,3,6]
 print(tri_fusion(L))
+
+M=[5,3,1,6,2,4,7,8]
+print(tri_a_bulles(M))
+
